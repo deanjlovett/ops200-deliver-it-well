@@ -38,12 +38,12 @@ describe('server/app.js', function() {
     });
   });
 
-  it('page says right said fred', (done) => {
+  it('page says right', (done) => {
   chai.request(server)
     .get('/')
     .end((err, res) => {
       expect(err).not.exist;
-      expect(JSON.stringify(res.text)).to.contain('Right Said Fred');
+      expect(JSON.stringify(res.text)).to.contain('Right');
       done();
     });
   });
