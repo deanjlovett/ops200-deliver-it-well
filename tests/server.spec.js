@@ -37,4 +37,15 @@ describe('server/app.js', function() {
       done();
     });
   });
+
+  it('page says right said fred', (done) => {
+  chai.request(server)
+    .get('/')
+    .end((err, res) => {
+      expect(err).not.exist;
+      expect(JSON.stringify(res.text)).to.contain('Right Said Fred');
+      done();
+    });
+  });
+
 })
